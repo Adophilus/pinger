@@ -20,11 +20,11 @@ def separateZeros (arr, match = 0):
             arr.insert(index, 1)
     return zeros
 
-def run (ip_addr):
+def run(ip_addr):
     match = re.search(ip_addr_pattern, ip_addr)
     if (not(match)):
         return False
-    ip_addr = match.group(0).split(".")
+    ip_addr = match[0].split(".")
     ip_addr = [ int(ip) for ip in ip_addr ]
     zeros = separateZeros(ip_addr)
     ip_address = ip_addr
